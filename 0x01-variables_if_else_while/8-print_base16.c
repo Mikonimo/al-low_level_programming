@@ -6,12 +6,19 @@
   */
 int main(void)
 {
-	char a = 0x0;
+	int i = 0;
 
-	while (a < 0xf)
+	while (i < 16)
 	{
-		putchar(a);
-		a++;
+		if (i < 10)
+		{
+			putchar(i + '0');
+		}
+		else
+		{
+			putchar(i - 10 + 'a');
+		}
+		i++;
 	}
 	putchar('\n');
 	return (0);
