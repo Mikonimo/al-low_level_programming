@@ -1,15 +1,5 @@
 #include "main.h"
 /**
-  * _putchar - writes the char c to std out
-  * @c: the character to print
-  *
-  * Return: 0 success
-  */
-int _putchar(char c)
-{
-	return (0);
-}
-/**
   * main - check code
   *
   * Return: 0 success
