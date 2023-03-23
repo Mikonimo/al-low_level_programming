@@ -14,5 +14,4 @@ void print_line(int n)
 		i++;
 	}
 	_putchar('\n');
-}	
-	
+}
