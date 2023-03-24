@@ -4,8 +4,11 @@ void print_triangle(int size) {
 		return;
 	}
 
-	for (int row = 1; row <= size; row++) {
-		for (int col = 1; col <= row; col++) {
+	int row;
+	int col;
+
+	for  (row = 1; row <= size; row++) {
+		for  (col = 1; col <= row; col++) {
 			_putchar('#');
 		}
 		_putchar('\n');
