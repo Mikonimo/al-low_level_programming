@@ -27,10 +27,10 @@ void puts_half(char *str)
 	else
 	{
 		n = (len - 1) / 2;
-		i = n;
+		i = n + 1;
 		while (i < len)
 		{
-			_putchar(str[i + 1]);
+			_putchar(str[i]);
 			i++;
 		}
 	}
