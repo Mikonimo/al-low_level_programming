@@ -8,19 +8,28 @@
 char *leet(char *str)
 {
 	int i, j;
-	char leet[8] = "aAeEoOtTlL";
-	char leet_nums[8] = "4433007711";
+	char leet_table[5][3] = {
+		{'a', 'A', '4'},
+		{'e', 'E', '3'},
+		{'o', 'O', '0'},
+		{'t', 'T', '7'},
+		{'l', 'L', '1'}
+	};
 
-	for (i = 0; str[i] != '\0'; i++)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		for (j = 0; j < 8; j++)
+		j = 0;
+		while (j < 5)
 		{
-			if (str[i] == leet[j])
+			if (str[i] == leet_table[j][0] || str[i] == leet_table[j][1])
 			{
-				str[i] = leet_nums[j];
+				str[i] = leet_table[j][2];
 				break;
 			}
+			j++;
 		}
+		i++;
 	}
 
 	return (str);
