@@ -1,13 +1,12 @@
 #include "main.h"
 /**
- * _strcat - it appends the src string to the dest string, overwriting the
- * terminating null byte
+ * *_strncat - appends at most n bytes from src to dest
  * @dest: the destination string
  * @src: the source string
- *
- * Return: dest string
+ * @n: no of bytes to be appended on dest
+ * Return: dest
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int dlen = 0;
 	int i = 0;
@@ -16,11 +15,11 @@ char *_strcat(char *dest, char *src)
 	{
 		dlen++;
 	}
-	while (src[i] != '\0')
+	while (src[i] != '\0' && i < n)
 	{
 		dest[dlen] = src[i];
-		dlen++;
 		i++;
+		dlen++;
 	}
 	dest[dlen] = '\0';
 	return (dest);
