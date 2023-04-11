@@ -5,7 +5,7 @@
  * main - entry point
  * @argc: no of arguments
  * @argv: array of strings
- * 
+ *
  * Return: 0 success, otherwise failure
  */
 int main(int argc, char *argv[])
