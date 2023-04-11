@@ -13,15 +13,17 @@ char *str_concat(char *s1, char *s2)
 	char *c;
 	int len1, len2;
 
-	if (s1 == NULL && s2 == NULL)
-		return ('\0');
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	len1 = strlen(s1);
 	len2 = strlen(s2);
-	len1 += len2;
-	c = malloc(sizeof(char) * (len1 +1));
+	c = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (c == NULL)
 		return (NULL);
-	c = strcat(s1, s2);
+	strcpy(c, s1);
+	strcat(c, s2);
 	return (c);
 	free(c);
 }
