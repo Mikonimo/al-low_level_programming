@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * argstostr - concatenates all the arguments in your program
- * @ac: no of  arguments 
+ * @ac: no of  arguments
  * @av: an argument
  *
  * Return: pointer to thr new string
