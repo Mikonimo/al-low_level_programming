@@ -2,11 +2,10 @@
 /**
  * print_name - prints a name
  * @name: name of the person
- * f - pointer to a function
- * @char: a parameter t the function pointer
+ * @f: pointer to a function
  *
  */
-void print_nme(char *name, void (*f)(char *))
+void print_name(char *name, void (*f)(char *))
 {
-	(*f)(name);
+	f(name);
 }
