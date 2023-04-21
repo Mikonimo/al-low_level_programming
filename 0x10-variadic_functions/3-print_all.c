@@ -6,8 +6,10 @@
  * print_all - prints anything
  * @format: list of types of arguments passed to the function
  *
- * Description: c: char, i: integer, f: float, s: char * (if the string is NULL,
- * print (nil) instead); any other char should be ignored. Print a new line at the end
+ * Description: c: char, i: integer, f: float, s:
+ * char * (if the string is NULL,
+ * print (nil) instead); any other char should be ignored.
+ * Print a new line at the end
  * of your function
  */
 void print_all(const char * const format, ...)
