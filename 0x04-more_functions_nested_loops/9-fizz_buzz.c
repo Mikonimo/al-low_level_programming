@@ -18,8 +18,8 @@ int main(void)
 			printf("Buzz");
 		else
 			printf("%d", i);
-		i++;
 		printf(" ");
+		i++;
 	}
 	printf("\n");
 	return (0);
