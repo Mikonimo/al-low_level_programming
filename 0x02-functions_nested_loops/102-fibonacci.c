@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	long long a = 0;
-	long long b = 1;
-	long long c = 0;
+	long a = 0;
+	long b = 1;
+	long c = 0;
 	int n;
 
 	for (n = 0; n < 50; n++)
@@ -16,11 +16,11 @@ int main(void)
 		c = a + b;
 		if (n < 49)
 		{
-			printf("%lld, ", c);
+			printf("%ld, ", c);
 		}
 		else
 		{
-			printf("%lld\n", c);
+			printf("%ld\n", c);
 		}
 		a = b;
 		b = c;
