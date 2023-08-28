@@ -20,11 +20,11 @@ void print_times_table(int n)
 			}
 			else
 			{
-				if (b != 9)
+				if (b != n)
 					_putchar(' ');
 				_putchar(product + '0');
 			}
-			if (b < 9) 
+			if (b < n)
 			{
 				_putchar(',');
 				_putchar(' ');
