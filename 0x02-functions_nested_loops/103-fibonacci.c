@@ -12,10 +12,10 @@ int main(void)
 	long sum = 0;
 	long n = 1;
 
-	while (n <= 4000000)
+	while (n <= 4000)
 	{
 		c = a + b;
-		if (c > 4000000)
+		if (c >= 4000000)
 			break;
 		if (n % 2 == 0)
 			sum += c;
@@ -23,7 +23,7 @@ int main(void)
 		b = c;
 		n++;
 	}
-	printf("%ld\n", c);
+	printf("%ld\n", sum);
 	return (0);
 }
 
