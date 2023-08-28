@@ -6,21 +6,21 @@
  */
 int main(void)
 {
-	int a = 0;
-	int b = 1;
-	int c = 0;
+	long long a = 0;
+	long long b = 1;
+	long long c = 0;
 	int n;
 
-	for (n = 0; n <= 50; n++)
+	for (n = 0; n < 50; n++)
 	{
 		c = a + b;
-		if (n < 50)
+		if (n < 49)
 		{
-			printf("%d, ", c);
+			printf("%lld, ", c);
 		}
 		else
 		{
-			printf("%d\n", c);
+			printf("%lld\n", c);
 		}
 		a = b;
 		b = c;
