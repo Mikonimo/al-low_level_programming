@@ -12,6 +12,9 @@ void print_times_table(int n)
 	{
 		for (b = 0; b < n; b++)
 		{
+			if (n > 15 || n < 0)
+				break;
+
 			product = a * b;
 			if (product > 9)
 			{
