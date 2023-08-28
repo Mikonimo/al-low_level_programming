@@ -10,28 +10,27 @@ void print_times_table(int n)
 
 	for (a = 0; a <= n; a++)
 	{
+		if (n > 15 || n < 0)
+			break;
 		for (b = 0; b <= n; b++)
 		{
-			if (n > 15 || n < 0)
-				break;
-
 			product = a * b;
 			if (product > 9 && product < 99)
 			{
-				_putchar(' ');
 				_putchar(product / 10 + '0');
 				_putchar(product % 10 + '0');
 			}
 			else if (product > 99)
 			{
-				_putchar(' ');
 				_putchar(product / 100 + '0');
 				_putchar((product % 100) / 10 + '0');
 				_putchar(product % 10 + '0');
 			}
 			else
 			{
-				if (b != n)
+				if (b != 0)
+				{
+					_putchar(' ');
 					_putchar(' ');
 				_putchar(product + '0');
 			}
