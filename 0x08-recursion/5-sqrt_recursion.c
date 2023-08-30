@@ -24,15 +24,18 @@ int _sqrt_recursion(int n)
  */
 int root(int n, int l, int h)
 {
+	int mid;
+	long square;
+
 	if (l > h)
 		return (-1);
-	int mid = l + (h - l) / 2;
-	long square = (long)mid * mid;
+	mid = l + (h - l) / 2;
+	square = (long)mid * mid;
 
 	if (square == n)
 		return (mid);
 	else if (square < n)
 		return (root(n, mid + 1, h));
 	else
-		return (root(n, low, mid - 1));
+		return (root(n, l, mid - 1));
 }
