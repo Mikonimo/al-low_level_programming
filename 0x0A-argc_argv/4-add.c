@@ -13,11 +13,14 @@ int main(int argc, char **argv)
 	int result = 0;
 
 	if (argc == 1)
+	{
 		printf("0\n");
+		return (0);
+	}
 	for (n = 1; n < argc; n++)
 	{
 		i = atoi(argv[n]);
-		if (i > 0 )
+		if (i > 0)
 			result += i;
 		else
 		{
