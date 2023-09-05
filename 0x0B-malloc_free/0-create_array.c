@@ -18,6 +18,6 @@ char *create_array(unsigned int size, char c)
 	if (arr == NULL)
 		return (NULL);
 	for (n = 0; n < size; n++)
-		arr[0] = c;
+		arr[n] = c;
 	return (arr);
 }
