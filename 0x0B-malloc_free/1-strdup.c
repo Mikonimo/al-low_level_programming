@@ -13,10 +13,9 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	copy = malloc((sizeof(char) * strlen(str)) + 1);
-	copy = str;
+	copy = malloc(strlen(str) + 1);
 	if (copy == NULL)
 		return (NULL);
-	free(copy);
+	strcpy(copy, str);
 	return (copy);
 }
