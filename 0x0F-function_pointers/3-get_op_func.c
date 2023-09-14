@@ -1,4 +1,5 @@
-#include "calc.h"
+#include "3-calc.h"
+#include <stddef.h>
 /**
  * get_op_func - returns a pointer to a func
  * @s: the operator
@@ -17,7 +18,7 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 
-	while (ops[i] != NULL)
+	while (ops[i].op != NULL)
 	{
 		if (ops[i].op[0] == s[0] && s[1] == '\0')
 			return (ops[i].f);

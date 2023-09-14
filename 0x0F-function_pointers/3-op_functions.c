@@ -1,4 +1,6 @@
-#include "calc.h"
+#include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * op_add - returns the sum of  a and b
  * @a: first integer
@@ -56,6 +58,11 @@ int op_div(int a, int b)
 	int div;
 
 	div = a / b;
+	if (b == 0)
+        {
+		printf("Error\n");
+		exit(100);
+	}
 	return (div);
 }
 
@@ -71,5 +78,10 @@ int op_mod(int a, int b)
 	int mod;
 
 	mod = a % b;
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	return (mod);
 }
