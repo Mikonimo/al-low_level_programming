@@ -26,7 +26,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (wr < 0 || wr != (ssize_t)letters)
 		return (0);
 	close(op);
-	_putchar('\n');
 	return (wr);
 }
 
