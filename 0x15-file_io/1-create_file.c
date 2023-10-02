@@ -13,16 +13,15 @@
 int create_file(const char *filename, char *text_content)
 {
 	int op, wr;
-	char buf[BUF_SIZE];
 
 	if (filename == NULL)
 		return (-1);
-	op = open(filename, O_CREAT | O_RDWR);
+	op = open(filename, O_RDWR | O_CREAT);
 	if (op < 0)
 		return (-1);
 	if (text_content != NULL)
 	{
-		wr = write(op, buf, strlen(text_content));
+		wr = write(op, text_content, strlen(text_content));
 		if (wr < 0)
 			return (-1);
 	}
