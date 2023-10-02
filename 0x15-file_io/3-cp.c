@@ -22,21 +22,35 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	f1 = open(av[1], O_RDONLY);
-	r1 = read(f1, buf, 1024);
-	if (f1 < 0 || r1 < 0)
+	if (f1 < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
+	f2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (f2 < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		close(f2);
+		exit(99);
+	}
+	while ((r1 = read(f1, buf, BUF_SIZE)) > 0)
+	{
+		w2 = write(f2, buf, r1);
+		if (f1 < 0 || w2 != r1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			close(f1);
+			close(f2);
+			exit(99);
+		}
+	}
+	if (r1 < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		close(f1);
-		exit(98);
-	}
-	f2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	w2 = write(f2, buf, r1);
-	if (f2 < 0 || w2 < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		close(f1);
 		close(f2);
-		exit(99);
+		exit(98);
 	}
 	c1 = close(f1);
 	if (c1 < 0)
@@ -52,4 +66,3 @@ int main(int ac, char **av)
 	}
 	return (0);
 }
-
