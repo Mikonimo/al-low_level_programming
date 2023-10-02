@@ -4,7 +4,9 @@
 #include <fcntl.h>
 #include "main.h"
 /**
- * main - entry point
+ * main - copies the contents from one file to another
+ * @ac: argument count
+ * @av: array of arguments
  *
  * Return: Always 0
  */
@@ -24,6 +26,7 @@ int main(int ac, char **av)
 	if (f1 < 0 || r1 < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		close(f1);
 		exit(98);
 	}
 	f2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
@@ -31,6 +34,8 @@ int main(int ac, char **av)
 	if (f2 < 0 || w2 < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		close(f1);
+		close(f2);
 		exit(99);
 	}
 	c1 = close(f1);
