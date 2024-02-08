@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/mnt/c/Program Files/Java/jdk-19/bin/api-ms-win-core-console-l1-1-0.dll"
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c89"
         }
     ],
     "version": 4
